@@ -1,0 +1,49 @@
+{%extends 'base.html' %}
+{% block listacolaborador %}
+{% load static %}
+{% csrf_token %}
+
+<div class="row fila1  mb-1 mt-2" >
+    <div class ="col-1 columna1 rounded ">
+  </div> 
+
+ <div class ="col-8 columna2 rounded ">
+  <form class="form-inline my-2 my-lg-6" method="GET">
+      <input class="form-control mr-sm-2" type="text" name="buscar" placeholder="Buscar facturas..">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button> 
+  </form>
+  </div>
+</div>
+<table class="table table-bordered "style="background-image:url({% static 'img/f5.jpg'%});">
+<thead>
+    <tr>
+        <td><b>Código</b></td>
+        <td><b>Fecha_venta</b></td>
+        <td><b>Nombres cliente</b></td>
+        <td><b>Apellidos cliente</b></td>
+        <td><b>Nit cliente</b></td>
+        <td><b>Colaborador</b></td>
+        <td><b>Total</b></td>
+        <td><b>Acción</b></td>
+    </tr>
+    {% if factura %}
+       {% for encabezado_factura in factura %}  
+     <tr>
+        <td>{{encabezado_factura.id}}</td>
+        <td>{{encabezado_factura.fecha_venta}}</td>
+        <td>{{encabezado_factura.cliente.nombre_persona}}</td>
+        <td>{{encabezado_factura.cliente.apellido_persona}}</td>
+        <td>{{encabezado_factura.cliente.nit_persona}}</td>
+        <td>{{encabezado_factura.colaborador.persona.nombre_persona}}</td>
+        <td>{{encabezado_factura.total}}</td>
+        <td>
+          <a class= "btn btn-info" href="{% url 'crear_pdf' encabezado_factura.id %}">Detalle PDF</a>
+       </td> 
+      </tr>
+           {% endfor %}
+    {% else %}
+      <h1> No hay registros de solicitudes </h1>
+    {% endif %} 
+</tbody>
+</table>
+{% endblock %}

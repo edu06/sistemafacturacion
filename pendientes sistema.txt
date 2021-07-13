@@ -1,0 +1,13 @@
+* Que al ingresar una letra en el datatable nos arroje un mensaje que debe ingresar un numero- 
+* Inventario por sucursal y poder hacer envios de mercaderias entre sucursales 
+* Agregar rol de vendedor (facturar, consultar e ingresar clientes)
+* Roles de administrador (acceso total)
+* Al colocar un producto o item como inactivo, que realmente se coloque en estado inactivo y que no pueda elegirse 
+* Poder anular las facturas que querramos en rol de admin 
+* Al realizar una factura automaticamente debe mostrar el detalle de mi factura con un modal e imprimir de una vez 
+
+
+----Reporteria-------
+* Sacar un listado de las facturas realizadas durante el dia, incluso las anuladas pero que no sumen las facturas anuladas
+* Sacar un reporte que de todos los productos y por categoria con su existencia o un listado de los productos que esten cerca de la 
+  existencia minima de stock 

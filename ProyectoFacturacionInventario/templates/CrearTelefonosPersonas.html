@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block crearproveedor %}
+<form method="POST">
+    {% csrf_token %}
+<div class="row rounded mb-1">
+   <div class ="col-1 columna1 rounded "  >
+   </div>
+<div class ="col-6 columna2 rounded mt-2 "  >
+   <div class="row fila1 justify-content-center mb-1 mt-2" >
+   <div class ="col columna1 ">
+   <h2>Ingreso Telefonos Personas</h2>
+   </div>
+ </div>
+     <div class="row fila1 justify-content-left mb-1" > 
+         <div class =" col-4 columna1   rounded ">    
+            <label for="{{form.numero_telefono.name}}">{{form.numero_telefono.label}}</label> 
+         </div>
+         <div class =" col-3 columna2 rounded ">
+            {{form.numero_telefono}}
+         </div>
+         </div>  
+       
+         <div class="row fila2 justify-content-left mb-1" > 
+            <div class =" col-4 columna1   rounded ">    
+               <label for="{{form.persona.name}}">{{form.persona.label}}</label>  
+            </div>
+            <div class =" col-6 columna2   rounded ">
+               {{form.persona}}
+            </div>
+            </div>   
+                        
+            <div class="row fila13 justify-content-center mb-1 mt-5" > 
+               <div class =" col-3  columna1   rounded ">    
+                 <button type="submit" class="btn btn-success">Guardar</button>
+               </div>
+               <div class =" col-3  columna2 block-content-end   rounded ">
+                  <button type="reset"  class="btn btn-info">Limpiar</button>
+               </div>
+               <div class =" col-3  columna2 block-content-end   rounded ">
+                  <a class= "btn btn-warning" href="{% url 'index' %}">Regresar</a>
+               </div>
+            </div> 
+            
+
+       <div class="row fila14 justify-content-center mb-1 mt-5" > 
+         <div class =" col columna1 mb-0  rounded ">    
+            
+         </div>
+               </div> 
+</div>
+<div class ="col-4 columna1 rounded " >
+   <img src="{% static 'img/cel.jpg' %}" class="img-fluid rounded float-end" alt="Cinque Terre">  
+</div>
+</div>
+</form>
+{% endblock %}

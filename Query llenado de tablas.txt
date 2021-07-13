@@ -1,0 +1,38 @@
+INSERT INTO appfactinv_marcas  (descripcion_marca,categoria)
+    VALUES
+    ('Samsung','A'),
+    ('Kingston','A'),
+    ('Xtech','A');
+    
+    
+INSERT INTO appfactinv_regimens  (descripcion_regimen,impuesto_regimen)
+    VALUES
+    ('Pequeño Contribuyente',5),
+    ('Normal',12);
+    
+INSERT INTO appfactinv_unidad_medidas (descripcion_unidad_medida)
+VALUES
+    ('Unidad'),
+    ('Docena'),
+    ('Caja');
+    
+INSERT INTO appfactinv_perfiles_colaboradores (nombre_perfil,descripcion_perfil)
+VALUES
+    ('Vendedor','Acceso facturacion y vistas'),
+    ('Administrador','Acceso Total');
+    
+INSERT INTO appfactinv_categoria_productos (descripcion_categoria_productos)
+VALUES
+    ('Tintas'),
+    ('Laptops'),
+    ('Suministros'),
+    ('Bocinas'),
+    ('Auriculares'),
+    ('PC Escritorio');
+    
+   INSERT INTO appfactinv_tipo_pagos (descripcion_tipo_pago)
+VALUES
+    ('Efectivo'),
+    ('Visa'),
+    ('Cheque'),
+    ('MasterCard');

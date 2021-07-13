@@ -1,0 +1,19 @@
+{%extends 'base.html' %}
+{% block listaproveedor %}
+{% load static %}
+
+<form method="POST">
+{% csrf_token %}
+
+<h5>¿Desea realmente borrar el Proveedor?: {{proveedores.id}} {{proveedores.nombre_proveedor}}</h5>
+
+<div class="row fila13 justify-content-center mb-1 mt-5" > 
+    <div class =" col-2  columna1   rounded ">    
+      <button type="submit" class="btn btn-danger"href="{% url 'borrar_proveedores' proveedores.id %}">Borrar Proveedor</button>
+    </div>
+<div class =" col-3  columna2 block-content-end   rounded ">
+    <a class= "btn btn-warning" href="{% url 'buscar_proveedores_delete' %}">Cancelar</a>
+     </div>
+ </div> 
+</form>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block actualizarproductos %}
+<form method="POST">
+{% csrf_token %}
+<div class="row fila2 rounded mb-1">
+<div class ="col-1 columna1 rounded "  >
+    </div> 
+<div class ="col-6 columna2 rounded mt-2 "style="background-image:url({% static 'img/f1.jpg'%});">
+   <div class="row fila1 justify-content-center mb-1 mt-2" >
+   <div class ="col columna1 ">
+   <h2>Modificación de Productos</h2>
+</div>
+</div>
+<div class="row fila3 justify-content-left mb-1" > 
+   <div class =" col-4 columna1   rounded ">    
+      <label for="{{form.cantidad.name}}">{{form.cantidad.label}}</label>  
+   </div>
+   <div class =" col-4 columna2 rounded "readonly>
+   {{ form.cantidad}}  
+   </div>
+   </div> 
+
+     
+  <div class="row fila3 justify-content-left mb-1" > 
+  <div class =" col-4 columna1   rounded ">    
+     <label for="{{form.nombre_producto.name}}">{{form.nombre_producto.label}}</label>  
+  </div>
+  <div class =" col-4 columna2   rounded ">
+  {{form.nombre_producto}}  
+  </div>
+  </div>       
+       
+  <div class="row fila4  mb-1" > 
+     <div class =" col-4 columna1   rounded ">    
+     <label for="{{form.descipcion_producto.name}}">{{form.descripcion_producto.label}}</label>   
+     </div>
+     <div class =" col-6 columna2   rounded ">
+     {{form.descripcion_producto}}
+     </div>
+     </div> 
+  
+     <div class="row fila5  mb-1" > 
+        <div class =" col-4 columna1   rounded ">    
+           <label for="{{form.prefijo.name}}">{{form.prefijo.label}}</label>
+        </div>
+        <div class =" col-3 columna2   rounded ">
+           {{form.prefijo}}
+        </div>
+        </div>
+
+        <div class="row fila5  mb-1" > 
+         <div class =" col-4 columna1   rounded ">    
+            <label for="{{form.categoria_producto.name}}">{{form.categoria_producto.label}}</label>
+         </div>
+         <div class =" col-3 columna2   rounded ">
+            {{form.categoria_producto}}
+         </div>
+         </div>
+
+
+  
+        <div class="row fila6 justify-content-left mb-1" > 
+           <div class =" col-4 columna1   rounded ">    
+              <label for="{{form2.precio_compra.name}}">{{form2.precio_compra.label}} 
+                        
+           </div>
+           <div class =" col-3 columna2   rounded ">
+              {{form2.precio_compra}}
+           </div>
+           </div>    
+          
+        <div class="row fila7 justify-content-left mb-1" > 
+           <div class =" col-4 columna1   rounded ">    
+              <label for="{{form2.precio_venta.name}}">{{form2.precio_venta.label}}</label> 
+           </div>
+           <div class =" col-3 columna2 rounded ">
+              {{form2.precio_venta}}
+           </div>
+           </div>  
+         
+           <div class="row fila8 justify-content-left mb-1" > 
+              <div class =" col-4 columna1   rounded ">    
+                 <label for="{{form2.fecha_ingreso.name}}">{{form2.fecha_ingreso.label}}</label>  
+              </div>
+              <div class =" col-3 columna2 rounded "value="disabled" >
+                 
+                 {{form2.fecha_ingreso}}
+                 <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+              </div>
+              </div>   
+             
+          
+              <div class="row fila9 justify-content-left mb-1" > 
+                 <div class =" col-4 columna1   rounded ">    
+                    <label for="{{form2.fecha_vencimiento.name}}">{{form2.fecha_vencimiento.label}}</label> 
+                 </div>
+                 <div class =" col-3 columna2   rounded ">
+                  {{form2.fecha_vencimiento}}
+                 </div>
+                 </div>    
+     
+                 <div class="row fila10 justify-content-left mb-1" > 
+                    <div class =" col-4 columna1   rounded ">    
+                       <label for="{{form2.cantidad_min_stock.name}}">{{form2.cantidad_min_stock.label}}</label>
+                    </div>
+                    <div class =" col-3 columna2   rounded ">
+                       {{form2.cantidad_min_stock}}
+                    </div>
+                    </div>   
+          
+                    <div class="row fila11 justify-content-left mb-1" > 
+                       <div class =" col-4 columna1   rounded ">    
+                          <label for="{{form2.estado_producto.name}}">{{form2.estado_producto.label}}</label>
+                       </div>
+                       <div class =" col-3 columna2 rounded">
+                         {{form2.estado_producto}}
+                                         
+                       </div>
+                       </div> 
+       
+                       <div class="row fila12 justify-content-left mb-1" > 
+                          <div class =" col-4 columna1   rounded ">    
+                             <label for="{{form2.descripcion_codigo_lote.name}}">{{form2.descripcion_codigo_lote.label}}</label>
+                          </div>
+                          <div class =" col-3 columna2   rounded ">
+                             {{form2.descripcion_codigo_lote}}
+                          </div>
+                          </div> 
+  
+                          <div class="row fila12 justify-content-left mb-1" > 
+                                <div class =" col-4 columna1   rounded ">    
+                                   <label for="{{form2.proveedor.name}}">{{form2.proveedor.label}}</label>
+                                </div>
+                                <div class =" col-4 columna2   rounded ">
+                                   {{form2.proveedor}}
+                                </div>
+                                </div>
+  
+                                <div class="row fila12 justify-content-left mb-1" > 
+                                      <div class =" col-4 columna1   rounded ">    
+                                         <label for="{{form2.marca.name}}">{{form2.marca.label}}</label>
+                                      </div>
+                                      <div class =" col-4 columna2   rounded ">
+                                         {{form2.marca}}
+                                      </div>
+                                      </div>
+  
+                                <div class="row fila12 justify-content-left mb-1" > 
+                                            <div class =" col-4 columna1   rounded ">    
+                                               <label for="{{form2.unidad_medida.name}}">{{form2.unidad_medida.label}}</label>
+                                            </div>
+                                            <div class =" col-4 columna2   rounded ">
+                                               {{form2.unidad_medida}}
+                                            </div>
+                                            </div>
+
+
+
+ 
+  
+
+
+                       <div class="row fila13 justify-content-center mb-1 mt-5" > 
+                        <div class =" col-4  columna1   rounded ">    
+                          <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                        </div>
+                        <div class =" col-3  columna2 block-content-end   rounded ">
+                           <a class= "btn btn-warning" href="{% url 'index' %}">Regresar</a>
+                        </div>
+                     </div> 
+                            <div class="row fila15 justify-content-center mb-1 mt-5" > 
+                                <div class =" col columna1 mb-0  rounded ">    
+                                </div>
+                                </div> 
+</div>
+ 
+<div class="col-4 columna4 mt-2">
+   <img src="{% static 'img/productos.jpg' %}" class="img-fluid rounded float-end" alt="Cinque Terre">
+</div>
+</div>
+</form>
+{% endblock %}
